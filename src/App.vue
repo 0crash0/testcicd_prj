@@ -3,19 +3,25 @@ import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 </script>
 <script>
+import axios from "axios"
 export default {
   data() {
     return {
-      data: null,
+      msg: "[]",
     };
   },
-  methods: {
-    async fetchData() {
-      const response = await fetch("main.cfg");
-      this.data = response;
-    }
+  async mounted() {
+    axios.get('/main.cfg').then(function(response){
+      this.msg = response.data
+      console.log(response.data)
+    })
+        .catch(error => {
+          //this.errorMessage = error.message;
+          console.log("There was an error!");
+        });
   }
-};
+}
+
 </script>
 
 
@@ -24,8 +30,8 @@ export default {
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="You asdddsd did it!" />
-      <p v-if="data">{{ data }}</p>
+      <HelloWorld msg="{{ data }}" />
+      <span>Сообщение: {{ msg }}</span>
     </div>
   </header>
 
