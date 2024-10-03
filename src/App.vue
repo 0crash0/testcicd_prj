@@ -11,7 +11,7 @@ export default {
     };
   },
   async mounted() {
-    axios.get('/main.cfg').then(function(response){
+    axios.get('/main.cfg').then(async  (response)=> {
       this.msg = response.data
       console.log(response.data)
     })
