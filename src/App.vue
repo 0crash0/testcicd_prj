@@ -2,6 +2,21 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 </script>
+<script>
+export default {
+  data() {
+    return {
+      data: null,
+    };
+  },
+  methods: {
+    fetchData() {
+      const response = fetch("main.cfg");
+      this.data = response;
+    }
+  }
+};
+</script>
 
 <template>
   <header>
@@ -9,6 +24,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You asdddsd did it!" />
+      <p v-if="data">{{ data }}</p>
     </div>
   </header>
 
