@@ -31,7 +31,7 @@ export default {
 
     <div class="wrapper">
       <HelloWorld msg="{{ data }}" />
-      <span>Сообщение: {{ msg }}</span>
+      <span>Содержимое конфига: {{ msg }}</span>
     </div>
   </header>
 
