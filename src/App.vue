@@ -1,8 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
-</script>
-<script>
+
 export default {
   data() {
     return {
@@ -10,13 +9,14 @@ export default {
     };
   },
   methods: {
-    fetchData() {
-      const response = fetch("main.cfg");
+    async fetchData() {
+      const response = await fetch("main.cfg");
       this.data = response;
     }
   }
 };
 </script>
+
 
 <template>
   <header>
