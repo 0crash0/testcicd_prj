@@ -30,7 +30,7 @@ export default {
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="main!" />
+      <HelloWorld msg="asds!" />
       <span>Содержимое конфига b2v: {{ msg }}</span>
     </div>
   </header>
