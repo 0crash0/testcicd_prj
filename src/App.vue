@@ -31,7 +31,7 @@ export default {
 
     <div class="wrapper">
       <HelloWorld msg="main!" />
-      <span>Содержимое конфига: {{ msg }}</span>
+      <span>Содержимое конфига b2v: {{ msg }}</span>
     </div>
   </header>
 
